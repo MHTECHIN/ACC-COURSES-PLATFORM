@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ACC</title>
+        <style>
+            *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat',sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+:root{
+    --bg-color:#ffffff;
+    --text-color:#22100d;
+    --second-color:#685f78;
+    --main-color:#6e2420;
+    --large-font:3.8rem;
+    --h2-font:2.6rem;
+    --p-font:1.1rem;
+}
+body{
+    color: var(--text-color);
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:#ffffff;
+    padding: 23px 13%;
+    transition: all .40s ease;
+}
+.logo img{
+    height: auto;
+    width: 160px;
+    max-width: 100%;
+}
+.navbar{
+    display: flex;
+}
+.navbar a{
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: var(--p-font);
+    padding: 10px 22px;
+    transition: all .40s ease;
+}
+.navbar a:hover{
+    color: var(--main-color);
+}
+.header-icon{
+    display: flex;
+    align-items: center;
+}
+.header-icon i{
+    margin-left:10px;
+    font-size: 24px;
+    color: var(--text-color);
+    transition: all .40s ease;
+    margin-right:15px;
+}
+.header-icon i:hover{
+    transform:scale(1.2);
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 34px;
+    color: var(--text-color);
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+section{
+    padding: 80px 13%;
+}
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    align-items: center;
+}
+.home-text h1{
+    font-size: var(--large-font);
+    margin: 15px 0 15px;
+    color: var(--text-color);
+}
+.home-text h6{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--main-color);
+}
+.home-text p{
+    font-size: var(--p-font);
+    font-weight: 500;
+    margin-bottom: 48px;
+    color: var(--second-color);
+}
+.latter form{
+    width: 100%;
+    max-width: 460px;
+    position: relative;
+}
+.latter form input:first-child{
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    padding: 16px 140px 16px 15px;
+    border: 2px solid var(--main-color);
+    border-radius: 30px;
+}
+.latter form input:last-child{
+    position: absolute;
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 16px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    top: 1.5px;
+    right: 1px;
+}
+.home-img img{
+    height: auto;
+    width: 100%;
+}
+header .sticky{
+    background: var(--bg-color);
+    padding: 12px 13%;
+    box-shadow: 0px 4px 15px rgb(0 0 0 / 8%);
+}
+#main{
+    background-color: bisque;
+}
+.main{
+    padding: 70px 13%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    gap: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+}
+.main-box{
+    align-items: center;
+    gap: 1.8rem;
+    border: 1px solid #0b0b0b;
+    border-radius: 20px;
+    padding: 20px 30px;
+    box-shadow: -11.729px -11.729px 32px rgb(255 255 255/20%);
+    transition: all .40s ease;
+}
+.main-box:hover{
+    transform: translateY(-15px);
+}
+.main-text h4{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+
+}
+.main-text p{
+    font-size:var(--p-font);
+    font-weight: 500;
+    color:var(--second-color);
+
+}
+#faculties{
+    background-color: aquamarine;
+}
+.cnt-txt{
+    text-align: center;
+}
+.cnt-txt h5{
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.cnt-txt h2{
+    color: var(--main-color);
+    font-size: var(--h2-font);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.cnt-con{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    gap: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 4rem;
+}
+.box img{
+    height: auto;
+    width: 110px;
+    margin-bottom: 20px;
+}
+.box{
+    padding: 25px 60px;
+    border: 1px solid #595959;
+    border-radius: 20px;
+    box-shadow: -11.729px -11.729px 32px rgb(255 255 255/20%);
+    transition: all .40s ease;
+}
+.box:hover{
+    transform: translateY(-15px);
+}
+.box h3{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    transition: all .40s ease;
+}
+.box h3:hover{
+    color: var(--main-color);
+}
+.box p{
+    font-size:var(--p-font);
+    font-weight: 500;
+    color:var(--second-color);
+}
+.contact{
+	padding: 60px 13%;
+	background: var(--bg-color);
+}
+.main-contact{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+	gap: 2rem;
+}
+#contact{
+    background-color:#999898;
+}
+.contact-content img{
+	height: auto;
+	width: 160px;
+	max-width: 100%;
+	margin-bottom: 30px;
+}
+.contact-content li{
+	margin-bottom: 18px;
+}
+.contact-content li a{
+	display: block;
+	color: var(--main-color);
+	font-weight: bold;
+	font-size: 20px;
+	transition: all .40s ease;
+}
+.contact-content li a:hover{
+	transform: translateX(10px);
+	color: var(--main-color);
+}
+
+.last-text p{
+	text-align: center;
+	padding: 18px;
+	color: var(--second-color);
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+@media (max-width: 1410px){
+	header{
+		padding: 10px 3%;
+		transition: .2s;
+	}
+	header.sticky{
+		padding: 12px 3%;
+		transition: .2s;
+	}
+	section{
+		padding: 70px 3%;
+		transition: .2s;
+	}
+	.main{
+		padding: 70px 3%;
+		transition: .2s;
+	}
+	.contact{
+		padding: 60px 3%;
+		transition: .2s;
+	}
+
+}
+
+@media (max-width: 1050px){
+	:root{
+		--big-font: 3.2rem;
+	  --h2-font: 2rem;
+	  --p-font: 1rem;
+	  transition: .1s;
+	}
+	.home{
+		height: 84vh;
+	}
+}
+
+@media (max-width: 1025px){
+	#menu-icon{
+		display: block;
+	}
+	.navbar{
+		position: absolute;
+		top: 100%;
+		right: -100%;
+		width: 300px;
+		height: 110vh;
+		background: var(--main-color);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 170px 30px;
+		transition: all .40s ease;
+	}
+	.navbar a{
+		display: block;
+		margin: 1.3rem 0;
+		color: var(--bg-color);
+	}
+	.navbar a:hover{
+		color: var(--bg-color);
+		transform: translateY(-5px);
+	}
+	.navbar.open{
+		right: 0;
+	}
+}
+
+@media (max-width: 890px){
+	.home{
+		height: 150vh;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	.home-text{
+		padding-top: 20px;
+	}
+	.home-img{
+		text-align: center;
+	}
+	.home-img img{
+		height: auto;
+		width: 100%;
+	}
+	.about{
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+}
+@media (max-width: 600px){
+	.home{
+		height: 120vh;
+	}
+}
+        </style>
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,600;1,100;1,200;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--Header-->
+        <header>
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#main">Courses</a></li>
+                <li><a href="#faculties">Faculty</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="header-icon">
+                <a href="#"><i class='bx bx-user'></i></a>
+                <a href="#"><i class='bx bx-heart'></i></a>
+                <a href="#"><i class='bx bx-cart'></i></a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+
+            </div>
+
+        </header>
+        <!--Section-->
+        <section class="home" id="home">
+            <div class="home-text">
+                <h6>Learn your best from here</h6>
+                <h1>Easy Accessible Courses</h1>
+                <p>We provide different forms of learning platform.</p>
+                <div class="latter">
+                    <form>
+                        <input type="email" placeholder="Enter E-mail here...." required>
+                        <input type="submit" placeholder="Sumbmit">
+                    </form>
+                </div>
+            </div>
+            <div class="home-img">
+                <img src="img/Self-Learning.png">
+            </div>
+        </section>
+        <!--Cources-->
+        <section class="main" id="main">
+            <div class="main-box">
+                <div class="main-img">
+                    <img src="img/python.png">
+                </div>
+                <div class="main-text">
+                    <h4>Python</h4>
+                    <p>Python would help developing
+                        website
+                    </p>
+                </div>
+            </div>
+            <div class="main-box">
+                <div class="main-img">
+                    <img src="img/java.jpg">
+                </div>
+                <div class="main-text">
+                    <h4>Java</h4>
+                    <p>Python would help developing
+                        website
+                    </p>
+                </div>
+            </div>
+            <div class="main-box">
+                <div class="main-img">
+                    <img src="img/c1.jpg">
+                </div>
+                <div class="main-text">
+                    
+                    <h4>C</h4>
+                    <p>Python would help developing
+                        website
+                    </p>
+                </div>
+            </div>
+            <div class="main-box">
+                <div class="main-img">
+                    <img src="img/c++.png">
+                </div>
+                <div class="main-text">
+                    <h4>C++</h4>
+                    <p>Python would help developing
+                        website
+                    </p>
+                </div>
+            </div>
+            <div class="main-box">
+                <div class="main-img">
+                    <img src="img/c++.png">
+                </div>
+                <div class="main-text">
+                    <h4>C</h4>
+                    <p>Python would help developing
+                        website
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!--faculty-->
+        <section class="faculties" id="faculties">
+            <div class="cnt-txt">
+                <h5>Faculties</h5>
+                <h2>Cource Faculty</h2>
+            </div>
+            <div class="cnt-con">
+                <div class="box">
+                    <img src="img/team-1.jpg">
+                    <h3>Angular Development</h3>
+                    <p>10 years of experience</p>
+                </div>
+                <div class="box">
+                    <img src="img/team-2.jpg">
+                    <h3>Cloud Computing</h3>
+                    <p>5 years of experience</p>
+                </div>
+                <div class="box">
+                    <img src="img/team-3.jpg">
+                    <h3>Web Development</h3>
+                    <p>15 years of experience</p>
+                </div>
+                <div class="box">
+                    <img src="img/team-4.jpg">
+                    <h3>Data Analysis</h3>
+                    <p>10 years of experience</p>
+                </div>
+                <div class="box">
+                    <img src="img/team-1.jpg">
+                    <h3>Angular Development</h3>
+                    <p>10 years of experience</p>
+                </div>
+            </div>
+
+        </section>
+        <!---start contact section---->
+	<section class="contact" id="contact">
+		<div class="main-contact">
+			<div class="contact-content">
+				<img src="img/course-3.jpg">
+				<li><a href="#">Facebook</a></li>
+				<li><a href="#">Instagram</a></li>
+				<li><a href="#">Twitter</a></li>
+			</div>
+
+			<div class="contact-content">
+				<li><a href="#home">Home</a></li>
+			  <li><a href="#categories">Categories</a></li>
+			  <li><a href="#courses">Courses</a></li>
+			  <li><a href="#about">About Us</a></li>
+			  <li><a href="#contact">Contact</a></li>
+			</div>
+
+			<div class="contact-content">
+				<li><a href="#">Profile</a></li>
+				<li><a href="#">Login</a></li>
+				<li><a href="#">Register</a></li>
+				<li><a href="#">Instructor</a></li>
+				<li><a href="#">Dashboard</a></li>
+			</div>
+
+			<div class="contact-content">
+				<li><a href="#">Sambhaji Nagar,<br> INDIA</a></li>
+				<li><a href="#">info@acc.com</a></li>
+				<li><a href="#">01646895741</a></li>
+			</div>
+
+		</div>
+	</section>
+
+	<div class="last-text">
+		<p>© 2022 ACC Cources. All rights reserved.</p>
+	</div>
+
+        <!--Cources-->
+        <!--js-->
+        <script type="text/Javascript" src="script.js"></script>
+    </body>
+</html>
